@@ -1,0 +1,21 @@
+{
+  "name": "fullstack-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "cd client && npm run dev && cd ..",
+    "dev:server": "cd server && npm run dev && cd ..",
+
+    "heroku-postbuild": "npm run build:client && npm run build:server",
+    "build:client": "cd client && npm run build && cd ..",
+    "build:server": "cd server && npm run tsc && cd ..",
+
+    "postinstall": "npm run install:client && npm run install:server",
+    "install:client": "cd client && npm install && cd ..",
+    "install:server": "cd server && npm install && cd .."
+  },
+  "author": "",
+  "license": "ISC"
+}
